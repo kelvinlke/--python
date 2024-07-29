@@ -1,0 +1,26 @@
+def bubble_sort(arr):
+    """
+    实现冒泡排序算法。
+
+    参数:
+    arr (list): 待排序的列表
+
+    返回:
+    list: 排序后的列表
+    """
+    n = len(arr)
+
+    # 遍历列表 n-1 次
+    for i in range(n):
+        # 每次遍历, 将最大的元素"浮"到列表末尾
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                # 交换相邻两个元素, 将较大的元素"浮"到后面
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+    return arr
+
+# 测试
+unsorted_list = [64, 34, 25, 12, 22, 11, 90]
+sorted_list = bubble_sort(unsorted_list)
+print("排序后的列表:", sorted_list)
